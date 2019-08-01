@@ -1,11 +1,16 @@
 # Doxiemizer
 The free & easy way to max out your Doxie scanner and to OCR/stich any image file or PDF from any source with your Doxie software.
+### Background
+The Doxie is great as long as the documents fit in the scanner. But how can you scan a document that is too large or too thick or has any glued or stapled objects on it? You simply can’t.
+
+Doxiemizer allows you to combine documents from different sources in one Doxie document and save them as one OCR'ed PDF or stitched image. 
+
+Take a photo of the document with your camera or mobile phone and use Doxiemizer to prepare the image files for import. If the document wont’t fit on one photo, just take two or more photos, choose Prepare for Stitching, stitch them together and choose Send to Prepare for OCR. 
 
 ## Table of content
   * [What is Doxiemizer?](#what-is-doxiemizer)
     + [~~10~~ 9 good reasons for using Doximiezer](#10-9-good-reasons-for-using-doximiezer)
     + [Free download](#free-download)
-    + [Background](#background)
   * [Installation](#installation) 
     + [Requirements](#requirements)
     + [Download and installation](#download-and-installation)
@@ -54,12 +59,6 @@ Any questions or suggestions? [Send me your feedback!](https://doxiemizer.uservo
 
 ![Doxiemizer vs. standard Doxie software](images-for-readme/installer-disclaimer.png)
 
-### Background
-The Doxie is great as long as the documents fit in the scanner. But how can you scan a document that is too large or too thick or has any glued or stapled objects on it? You simply can’t.
-
-Doxiemizer allows you to combine documents from different sources in one Doxie document and save them as one OCR'ed PDF or stitched image. 
-
-Take a photo of the document with your camera or mobile phone and use Doxiemizer to prepare the image files for import. If the document wont’t fit on one photo, just take two or more photos, choose Prepare for Stitching, stitch them together and choose Send to Prepare for OCR. 
 ## Installation
 ### Requirements
 * Mac OS X 10.6.8 or above (AutoStitch needs 10.7 or above)
