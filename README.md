@@ -1,31 +1,31 @@
-
 # Doxiemizer
-The free & easy way to max out your Doxie scanner and to OCR/stich any image file or PDF document with your Doxie software.
+The free & easy way to max out your Doxie scanner and to OCR/stich any image file or PDF from any source with your Doxie software.
 
 ## Table of content
-  * [What is Doxiemizer?](#what-is-doxiemizer-)
-    + [~~10~~ 9 good reasons for using Doximiezer](#--10---9-good-reasons-for-using-doximiezer)
+  * [What is Doxiemizer?](#what-is-doxiemizer)
+    + [~~10~~ 9 good reasons for using Doximiezer](#10-9-good-reasons-for-using-doximiezer)
     + [Free download](#free-download)
-  * [Background](#background)
-  * [Requirements](#requirements)
-  * [Installation](#installation)
+    + [Background](#background)
+  * [Installation](#installation) 
+    + [Requirements](#requirements)
+    + [Download and installation](#download-and-installation)
   * [How To Use Doxiemizer](#how-to-use-doxiemizer)
-    + [How to OCR an image or PDF](#how-to-ocr-an-image-or-pdf)
-  * [How To OCR Doxie flip Images](#how-to-ocr-doxie-flip-images)
-    + [IRIScan Anywhere 3 support](#iriscan-anywhere-3-support)
+      + [How to OCR an image or PDF](#how-to-ocr-an-image-or-pdf)
+      + [How To OCR Doxie flip Images](#how-to-ocr-doxie-flip-images)
+      + [IRIScan Anywhere 3 support](#iriscan-anywhere-3-support)
   * [F.A.Q.](#faq)
-      - [Is the original Doxie software altered in any way?](#is-the-original-doxie-software-altered-in-any-way-)
-      - [Are the original image files altered in any way?](#are-the-original-image-files-altered-in-any-way-)
-      - [I have noticed a temporary Doxiemizer volume - what is this?](#i-have-noticed-a-temporary-doxiemizer-volume---what-is-this-)
-      - [What file formats are supported?](#what-file-formats-are-supported-)
-      - [What is the maximum file size?](#what-is-the-maximum-file-size-)
+      - [Is the original Doxie software altered in any way?](#is-the-original-doxie-software-altered-in-any-way)
+      - [Are the original image files altered in any way?](#are-the-original-image-files-altered-in-any-way)
+      - [I have noticed a temporary Doxiemizer volume - what is this?](#i-have-noticed-a-temporary-doxiemizer-volume---what-is-this)
+      - [What file formats are supported?](#what-file-formats-are-supported)
+      - [What is the maximum file size?](#what-is-the-maximum-file-size)
       - [I cannot see the Prepare for OCR or Prepare for Stitching options in the context menu](#i-cannot-see-the-prepare-for-ocr-or-prepare-for-stitching-options-in-the-context-menu)
       - [I am missing some files from my selection on the import](#i-am-missing-some-files-from-my-selection-on-the-import)
-      - [Is there any log file for Doxiemizer?](#is-there-any-log-file-for-doxiemizer-)
-      - [O.K. I’ve found the log but what do P4O and P4S mean?](#ok-i-ve-found-the-log-but-what-do-p4o-and-p4s-mean-)
-      - [How to uninstall Doxiemizer?](#how-to-uninstall-doxiemizer-)
+      - [Is there any log file for Doxiemizer?](#is-there-any-log-file-for-doxiemizer)
+      - [O.K. I’ve found the log but what do P4O and P4S mean?](#ok-i-ve-found-the-log-but-what-do-p4o-and-p4s-mean)
+      - [How to uninstall Doxiemizer?](#how-to-uninstall-doxiemizer)
       - [I have accidentally deleted the Uninstaller](#i-have-accidentally-deleted-the-uninstaller)
-      - [Any questions or suggestions?](#any-questions-or-suggestions-)
+      - [Any questions or suggestions?](#any-questions-or-suggestions)
   * [Disclaimer](#disclaimer)
 
 ## What is Doxiemizer?
@@ -48,24 +48,32 @@ Any questions or suggestions? [Send me your feedback!](https://doxiemizer.uservo
 ### Free download
 [Doxiemizer Installer (2.3 MB)](Doxiemizer%20Installer.zip)
 
+(If your download won't start, click the Download button)
+
+![Download button](images-for-readme/dlarrow.jpg)
+
 ![Doxiemizer vs. standard Doxie software](images-for-readme/installer-disclaimer.png)
 
-## Background
+### Background
 The Doxie is great as long as the documents fit in the scanner. But how can you scan a document that is too large or too thick or has any glued or stapled objects on it? You simply can’t.
 
 Doxiemizer allows you to combine documents from different sources in one Doxie document and save them as one OCR'ed PDF or stitched image. 
 
 Take a photo of the document with your camera or mobile phone and use Doxiemizer to prepare the image files for import. If the document wont’t fit on one photo, just take two or more photos, choose Prepare for Stitching, stitch them together and choose Send to Prepare for OCR. 
-
-## Requirements
+## Installation
+### Requirements
 * Mac OS X 10.6.8 or above (AutoStitch needs 10.7 or above)
 * Scanner - original Doxie, Doxie One, Doxie Go, Doxie Flip
 	+ you can buy a Doxie here http://www.getdoxie.com/store/
 * Doxie software - tested with version 2.4 and above
   http://help.getdoxie.com/doxiego/software
 
-## Installation
+### Download and installation
 Download and open the [Doxiemizer Installer (2.3 MB)](Doxiemizer%20Installer.zip)
+
+(If your download won't start, click the Download button)
+
+![Download button](images-for-readme/dlarrow.jpg)
 
 ([scanned by VirusTotal](https://www.virustotal.com/gui/file/6442ff77f10a91289d55121f783ca3ca9c0de749d2bb39387ac7046f8b9f83bc/detection)  MD5 = a8297315a553e9e9b957d26d0cfac824)
 
@@ -81,7 +89,7 @@ After the installation is finished you can start to use Doxiemizer right away.
 * press the right mouse button to open the context menu
 * choose **Prepare for OCR** or **Prepare for Stitching**
 
-![Finder service menu items](images-for-readme/servicemenuitems.png)
+![Finder service menu items](images-for-readme/servicemenuitems.jpg)
 
 Copies of the original files are made and the Doxie software is opened.
 You will find a new Doxiemizer volume ready for import.
@@ -90,7 +98,7 @@ You will find a new Doxiemizer volume ready for import.
 
 You can now import, OCR or stitch and Save the files like any scan from your Doxie scanner.
 
-## How To OCR Doxie flip Images
+### How To OCR Doxie flip images
 To OCR images from your Doxie Flip or stitched images, use the new Prepare for OCR feature from the Send button.
 
 ![Doxie software Send button ](images-for-readme/export-menu.png)
@@ -136,6 +144,10 @@ To make uninstalling as easy as installing Doxiemizer comes with its own Uninsta
 #### I have accidentally deleted the Uninstaller
 [Download Uninstaller (66 KB)](Doxiemizer%20Uninstaller.zip)
 
+(If your download won't start, click the Download button)
+
+![Download button](images-for-readme/dlarrow.jpg)
+
 #### Any questions or suggestions?
 [Send me your feedback!](https://doxiemizer.uservoice.com/)
 
@@ -145,4 +157,3 @@ The software is provided „As Is“. You are only allowed to use the Doxie™ s
 Doxie is a registered trademark of the [Apparent Corporation](https://www.itsapparent.com)
 
 I.R.I.S. and I.R.I.S.’ product names are [I.R.I.S. trademarks](https://www.irislink.com/)
-
