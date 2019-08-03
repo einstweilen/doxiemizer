@@ -1,6 +1,8 @@
 # Doximizer
 [English version of this document](#README.md)
 
+**Es handelt sich um ein fünf Jahre altes Skript, das ich regelmäßig mit meinem Doxie Go nutze. Vielleicht kann noch jemand etwas damit anfangen, denn die Doxiesoftware ist angenehm einfach in der Handhabung und es wird das Abbyy FineReader Modul für die OCR Funktionalität genutzt.**
+
 ## Hintergrund
 Die Doxie Software ist für alle Scannermodelle identisch, die einzelnen Module (OCR, Stitching) werden jeweils dann freigeschlatet, wenn das erste Mal ein Scan des jeweiligen Scanners importiert wird. Zusätzlich prüft die Software bei jedem Import, ob die Grafikdatei von einem Doxie erstellt wurde und von welchem.
 
