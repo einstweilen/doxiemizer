@@ -153,7 +153,7 @@ To make uninstalling as easy as installing Doxiemizer comes with its own Uninsta
 ![Download button](images-for-readme/dlarrow.jpg)
 
 #### Any questions or suggestions?
-[Send me your feedback!](https://doxiemizer.uservoice.com/)
+[Open an issue](https://github.com/einstweilen/doxiemizer/issues)
 
 ## Disclaimer
 The software is provided „As Is“. You are only allowed to use the Doxie™ software within the boundaries of the license agreement between you and Apparent. You are not allowed to use this software, if you don’t own a Doxie Go/One/original for the OCR feature and/or a Doxie Flip for the stitching feature. If in doubt, don’t use it.
