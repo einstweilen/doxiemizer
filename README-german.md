@@ -1,7 +1,7 @@
 # Doximizer
 [English version of this document](#README.md)
 
-**Es handelt sich um ein fünf Jahre altes Skript, das ich regelmäßig mit meinem Doxie Go nutze. Vielleicht kann noch jemand etwas damit anfangen, denn die Doxiesoftware ist angenehm einfach in der Handhabung und es wird das Abbyy FineReader Modul für die OCR Funktionalität genutzt.**
+**Es handelt sich um ein fünf Jahre (2014) altes Skript, das ich regelmäßig nutze, obwohl ich mittlerweile auch das umfangreichere [Readiris](https://www.irislink.com/Readiris-for-mac) im Einsatz habe. Vielleicht kann noch jemand etwas damit anfangen, denn die Doxiesoftware ist angenehm einfach in der Handhabung und es wird das Abbyy FineReader Modul für die OCR Funktionalität genutzt.**
 
 ## Hintergrund
 Die Doxie Software ist für alle Scannermodelle identisch, die einzelnen Module (OCR, Stitching) werden jeweils dann freigeschlatet, wenn das erste Mal ein Scan des jeweiligen Scanners importiert wird. Zusätzlich prüft die Software bei jedem Import, ob die Grafikdatei von einem Doxie erstellt wurde und von welchem.
@@ -15,7 +15,7 @@ Die Doxie Software (~100 MB) macht sich nicht auf dem Rechner breit und hängt s
 
 Bevor die Doxiemizer Skripte installiert werden, einmal die Doxie Software starten, damit die notwendigen Preference Dateien angelegt werden.
 
-Man braucht keine Seriennummer zur Installation und Nutzung der Doxiesoftware, die Berechtigung wird über die Exit-Daten in den gescannten Bildern gesteuert.
+Man braucht keine Seriennummer zur Installation und Nutzung der Doxiesoftware, die Berechtigung wird über die Exif-Daten in den gescannten Bildern gesteuert.
 
 #### Doxiemizer Installer laden
 
@@ -103,3 +103,5 @@ Die Tabelle zeigt die EXIF Daten, wenn die Scans vom Scanner kommen (der IRIS is
 Die Maximalwerte habe ich aus der Auflöung und den Gößenangeben der Hersteller errechnet
 
 ![exifs](images-for-readme/exiftabelle.png)
+
+Für Fragen den [Issue Tracker](https://github.com/einstweilen/doxiemizer/issues) verwenden
