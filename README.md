@@ -52,7 +52,7 @@ Any questions or suggestions? [Send me your feedback!](https://doxiemizer.uservo
 * Mac OS X 10.6.8 or above (AutoStitch needs 10.7 or above)
 * Scanner - original Doxie, Doxie One, Doxie Go, Doxie Flip
 	+ you can buy a Doxie here http://www.getdoxie.com/store/
-* Doxie software - tested with version 2.4 and above
+* Doxie software - tested with version 2.4 , 3.0 (2022) and above
   http://help.getdoxie.com/doxiego/software
 
 ### Download and installation
