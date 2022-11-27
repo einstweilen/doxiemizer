@@ -5,6 +5,9 @@ The free & easy way to max out your Doxie scanner and to OCR/stich any image fil
 
 **Please note: The Doxiemizer script is 5 years old, but I am still using it with my Doxie Go every week. Maybe others will find Doxiemizer useful too. The Doxie software is very easy to use and the OCR is done with the included Abbyy FineReader software.**
 
+### 2022-11-27 Bug Fix
+Fixed a bug that prevented Doximizer from working under Catalina and above! Tested with Monterey.
+
 ### Background
 The Doxie is great as long as the documents fit in the scanner. But how can you scan a document that is too large or too thick or has any glued or stapled objects on it? You simply can’t.
 
