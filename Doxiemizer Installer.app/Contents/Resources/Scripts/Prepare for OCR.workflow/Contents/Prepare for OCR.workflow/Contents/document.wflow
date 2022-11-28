@@ -1,134 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>AMApplicationBuild</key>
-	<string>444.7</string>
-	<key>AMApplicationVersion</key>
-	<string>2.8</string>
-	<key>AMDocumentVersion</key>
-	<string>2</string>
-	<key>actions</key>
-	<array>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<true/>
-					<key>Types</key>
-					<array>
-						<string>com.apple.applescript.object</string>
-					</array>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.0.2</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Automator</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict>
-					<key>source</key>
-					<dict/>
-				</dict>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array>
-						<string>com.apple.applescript.object</string>
-					</array>
-				</dict>
-				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Run AppleScript.action</string>
-				<key>ActionName</key>
-				<string>Run AppleScript</string>
-				<key>ActionParameters</key>
-				<dict>
-					<key>source</key>
-					<string>on run {input, parameters}		set theFileList to input	set completeList to theFileList	set impfiles to count of theFileList	set impcount to 0 as integer -- number of files to import	-- EXIF data for Doxie Go http://www.getdoxie.com/product/doxie-go/techspecs.html	set dox_make to "Apparent" -- not necessary	set dox_model to "Doxie Go"		-- max image size 8.5 x 15 inch / 600 dpi Doxie Go	set xmax to 5100	set ymax to 9000		-- convert these image formats to jpg before OCR	set bonus_ext to {"gif", "png", "tif", "tiff", "pict", "pic", "bmp"} as list		-- check if Domiemizer volume is mounted	try		set doxietest to ":Volumes:Doxiemizer" as alias	on error		set doxram to 256000		set ramdisk to "diskutil erasevolume HFS+ " &amp; quote &amp; "Doxiemizer" &amp; quote &amp; " `hdiutil attach -nomount ram://" &amp; doxram &amp; "`"		do shell script ramdisk	end try		-- create temp folders if necessary	set do_pre to "mkdir -p /Volumes/Doxiemizer/DCIM/DO_PRE"	do shell script do_pre		set do_tmp to "mkdir -p /Volumes/Doxiemizer/tmp"	do shell script do_tmp		repeat with theFile in theFileList		-- check file format		tell application "System Events" to set {theName, theExtension} to {name, name extension} of (contents of theFile)		if theExtension is not "" then set theName to text 1 thru -((count theExtension) + 2) of theName				if theExtension is "pdf" then			set qfile to quoted form of POSIX path of (theFile)			-- Test if already ocr'ed			try				set testocr to do shell script ("grep Font " &amp; qfile &amp; " | wc -l")				set testocr to testocr as integer				if testocr = 0 then					set utime to " " &amp; (do shell script "date '+%s'")					set pdftemp to quoted form of ("/Volumes/Doxiemizer/tmp/" &amp; theName &amp; utime &amp; "/")					do shell script "mkdir -p " &amp; pdftemp					set p2j to quoted form of (POSIX path of (path to home folder) &amp; "Library/Application Support/Doxiemizer/pdf2jpeg")					set pdfconv to p2j &amp; " -pdf " &amp; quoted form of POSIX path of (theFile) &amp; " -out " &amp; pdftemp &amp; " -dpi 200 | tr '/' ':'"					set pdf_ret to do shell script pdfconv					set pdf_files to paragraphs of pdf_ret as list					set the completeList to completeList &amp; pdf_files					set impcount to impcount + 1				else					log ("P4O PDF skipped, OCR information detected " &amp; quoted form of POSIX path of (theFile))				end if			on error errStr number errorNumber				if errorNumber &gt; 0 then					log ("P4O convert PDF to jpeg " &amp; errorNumber &amp; " " &amp; errStr &amp; " " &amp; quoted form of POSIX path of (theFile))				else					log ("P4O PDF skipped, OCR information detected " &amp; quoted form of POSIX path of (theFile))				end if			end try		end if	end repeat		repeat with i from 1 to count of completeList		set theFile to (item i of completeList) as alias		tell application "System Events" to set {theName, theExtension} to {name, name extension} of (contents of theFile)		if theExtension is not "" then set theName to text 1 thru -((count theExtension) + 2) of theName				if bonus_ext contains theExtension then			-- convert image to jpg 			try				set new_file to POSIX path of ("/Volumes/Doxiemizer/tmp/" &amp; theName &amp; ".jpg")				tell application "Image Events"					launch					set theFile to POSIX path of theFile					set this_image to open theFile					save this_image in new_file as JPEG without compression					close this_image					-- 					set theExtension to "jpg"					set theFile to (":Volumes:Doxiemizer:tmp:" &amp; theName &amp; "." &amp; theExtension) as alias				end tell			on error errStr number errorNumber				log ("P4O convert to jpeg " &amp; errorNumber &amp; " " &amp; errStr &amp; " " &amp; quoted form of POSIX path of (theFile))				display dialog "JPG conversion error" &amp; return &amp; theName &amp; "." &amp; theExtension with icon stop with title "Doxiemizer"				exit repeat -- exit script			end try		end if				if theExtension is "jpg" or theExtension is "jpeg" then			tell application "Finder" to move theFile to folder (":Volumes:Doxiemizer:tmp:" as alias) with replacing			set theFile to (":Volumes:Doxiemizer:tmp:" &amp; theName &amp; "." &amp; theExtension) as alias			set qtheFile to quoted form of POSIX path of (theFile)						try				tell application "Image Events"					launch					set this_image to open theFile					copy the dimensions of this_image to {w, h}										-- rotate to portrait mode					if w &gt; h then						rotate this_image to angle 90						set {w, h} to {h, w}					end if										-- too large?					if w &gt; xmax or h &gt; ymax then						-- calculate scale						set scale_factor to h / ymax						if (w / xmax) &gt; scale_factor then set scale_factor to w / xmax						scale this_image by factor scale_factor						save this_image with icon					end if										close this_image				end tell							on error errStr number errorNumber				log ("P4O image events " &amp; errorNumber &amp; " " &amp; errStr &amp; " " &amp; quoted form of POSIX path of (theFile))			end try									-- set EXIF data			set dox_exif to ¬				"sips -s make " &amp; quote &amp; dox_make &amp; quote &amp; ¬				" -s model " &amp; quote &amp; dox_model &amp; quote &amp; ¬				" " &amp; qtheFile			do shell script dox_exif						set impcount to impcount + 1			set do_mov to "mv " &amp; qtheFile &amp; " '/Volumes/Doxiemizer/DCIM/DO_PRE/" &amp; impcount &amp; " " &amp; theName &amp; ".jpg'"			do shell script do_mov					else			if theExtension is not "pdf" then log ("P4O file skipped - wrong file format " &amp; quoted form of POSIX path of (theFile))		end if			end repeat		-- prepare import: rename the image folder	set do_rename to "mv /Volumes/Doxiemizer/DCIM/DO_PRE/ /Volumes/Doxiemizer/DCIM/100DOXIE/"	do shell script do_rename		log ("P4O prepared " &amp; impcount &amp; " of " &amp; impfiles &amp; " for OCR")		if hasdoxiefolder("Doxiemizer") then		-- start Doxie		tell application "Doxie" to activate	else		-- unmount RAM disk		try			do shell script "diskutil unmount Doxiemizer"			log ("P4O no files to prepare, unmount Doxiemizer RAM disk")		end try	end if	end run-- pdf2jpg binary from http://www.macionette.com/blog/?page_id=5on log (logtext)	try		set p to (system attribute "HOME") &amp; "/Library/Logs/Doxiemizer.log"		set today to current date		set now to ((year of today) &amp; "-" &amp; ((month of today) as integer) &amp; "-" &amp; (day of today) &amp; " " &amp; time string of today &amp; "  ") as text		set fd to open for access p with write permission		write now &amp; logtext &amp; linefeed to fd as «class utf8» starting at eof		close access fd	on error		close access p	end tryend logon hasdoxiefolder(thedisk)	try		set doxietest to thedisk &amp; ":DCIM:100DOXIE" as alias -- check if folder exists		set doxietest to quoted form of (POSIX path of doxietest) as text		set i to (do shell script "ls -l " &amp; doxietest &amp; "*.[jJ][pP][gG] | wc -l") -- returns text to avoid "0"		set i to i as integer -- are there any JPGs		if i = 0 then return (false)		return (true)	on error		return (false)	end tryend hasdoxiefolder</string>
-				</dict>
-				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.RunScript</string>
-				<key>CFBundleVersion</key>
-				<string>1.0.2</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
-				<key>CanShowWhenRun</key>
-				<true/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryUtilities</string>
-				</array>
-				<key>Class Name</key>
-				<string>RunScriptAction</string>
-				<key>InputUUID</key>
-				<string>566FC0E3-BCA7-4180-AA74-D4ACB48D8F8B</string>
-				<key>Keywords</key>
-				<array>
-					<string>Run</string>
-				</array>
-				<key>OutputUUID</key>
-				<string>FB790670-2F2F-41A5-B339-09647BA99E62</string>
-				<key>UUID</key>
-				<string>A96689BC-3825-4FEE-9D33-E49A61282739</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Automator</string>
-				</array>
-				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<string>on run {input, parameters}
-	
-	(* Your script goes here *)
-	
-	return input
-end run</string>
-						<key>name</key>
-						<string>source</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-				</dict>
-				<key>isViewVisible</key>
-				<true/>
-				<key>location</key>
-				<string>622.500000:730.000000</string>
-				<key>nibPath</key>
-				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
-			</dict>
-			<key>isViewVisible</key>
-			<true/>
-		</dict>
-	</array>
-	<key>connectors</key>
-	<dict/>
-	<key>workflowMetaData</key>
-	<dict>
-		<key>serviceApplicationBundleID</key>
-		<string>com.apple.finder</string>
-		<key>serviceApplicationPath</key>
-		<string>/System/Library/CoreServices/Finder.app</string>
-		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject.document</string>
-		<key>serviceOutputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
-		<key>serviceProcessesInput</key>
-		<integer>0</integer>
-		<key>workflowTypeIdentifier</key>
-		<string>com.apple.Automator.servicesMenu</string>
-	</dict>
-</dict>
-</plist>
