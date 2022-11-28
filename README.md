@@ -42,30 +42,21 @@ Doxiemizer is a free add-on to your Doxie software to enable additional features
 Any questions or suggestions? [Send me your feedback!](https://doxiemizer.uservoice.com/)
 
 ### Free download
-[Doxiemizer Installer (2.3 MB)](Doxiemizer%20Installer.zip)
+[Doxiemizer Installer (2.5 MB)](https://github.com/einstweilen/doxiemizer/releases)
 
-(If your download won't start, click the Download button)
-
-![Download button](images-for-readme/dlarrow.jpg)
 
 ![Doxiemizer vs. standard Doxie software](images-for-readme/installer-disclaimer.png)
 
 ## Installation
 ### Requirements
 * Mac OS X 10.6.8 or above (AutoStitch needs 10.7 or above)
-* Scanner - original Doxie, Doxie One, Doxie Go, Doxie Flip
-	+ you can buy a Doxie here http://www.getdoxie.com/store/
 * Doxie software - tested with version 2.4 , 3.0 (2022) and above
   http://help.getdoxie.com/doxiego/software
 
 ### Download and installation
-Download and open the [Doxiemizer Installer (2.3 MB)](Doxiemizer%20Installer.zip)
+Download and open the latest [Doxiemizer Installer (2.5 MB)](https://github.com/einstweilen/doxiemizer/releases)
 
-(If your download won't start, click the Download button)
-
-![Download button](images-for-readme/dlarrow.jpg)
-
-([scanned by VirusTotal](https://www.virustotal.com/gui/file/6442ff77f10a91289d55121f783ca3ca9c0de749d2bb39387ac7046f8b9f83bc/detection)  MD5 = a8297315a553e9e9b957d26d0cfac824)
+([scanned by VirusTotal](https://www.virustotal.com/gui/file/986835df0ed8105e82f28c2de0c0436aa90c5fe8ecb9d2f4f6193b4e65fb1968?nocache=1)  MD5 = 986835df0ed8105e82f28c2de0c0436aa90c5fe8ecb9d2f4f6193b4e65fb1968)
 
 Double click the Doxiemizer Installer - that’s all.
 
